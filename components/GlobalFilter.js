@@ -16,6 +16,7 @@ export const GlobalFilter = ({ filter, setFilter }) => {
           setValue(e.target.value);
           onChange(e.target.value);
         }}
+        className="border-2"
       />
     </span>
   )

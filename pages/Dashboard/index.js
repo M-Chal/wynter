@@ -6,11 +6,18 @@ import {ref, get} from 'firebase/database';
 import Table from '../../components/Table'
 
 export const getStaticProps = async () => {
-  const dbRef = ref(db, "products");
-  const snapshot = await get(dbRef)
-  const products = snapshot.val()
-  return{
-    props: {products: snapshot.val()}
+  //I considered putting this as an api route to utilise a fetch as requested in the spec
+  //But since it's using hooks to firebase it would just add extra inefficiencies
+  //If I was fetching the data from a file it would make sense to use a fetch here
+  try{
+    const dbRef = ref(db, "products");
+    const snapshot = await get(dbRef)
+
+    return{
+      props: {products: snapshot.val()}
+    }
+  } catch(err){
+    console.error(err)
   }
 }
 
@@ -58,8 +65,10 @@ function index({products}) {
 
   return (
     <div>
-      {user && <p>Hello {userName}</p>}
-      <button onClick={handleLogOut}>Logout</button>
+      <div className='flex flex-row w-full items-center justify-end'>
+        {user && <p className='mr-8'>Hello {userName}</p>}
+        <button className='border border-blue-500 bg-blue-500 hover:bg-blue-400 p-4 my-2 mr-8 text-white' onClick={handleLogOut}>Logout</button>
+      </div>
       <Table products={products}/>
     </div>
   )

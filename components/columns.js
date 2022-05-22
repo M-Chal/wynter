@@ -1,5 +1,13 @@
 export const COLUMNS = [
     {
+        Header:"ID",
+        accessor:"ID"
+    },
+    {
+        Header:"SKU",
+        accessor:"SKU"
+    },
+    {
         Header:"Name",
         accessor:"Name"
     },
