@@ -23,7 +23,7 @@ function SignUp() {
 
   return (
     <div>
-      <h1 className='text-center text-3xl font-bold'>Welcome to the "Shop"</h1>
+      <h1 className='text-center text-3xl font-bold'>Welcome to the &#34;Shop&#34;</h1>
       <div className='max-w-[700px] mx-auto my-16 p-4'>
         <div>
           <h2 className='text-2xl font-bold py-2'>Sign up for free here</h2>
