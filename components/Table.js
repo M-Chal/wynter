@@ -46,6 +46,7 @@ function Table({products}) {
         const {pageIndex} = state
       return (
         <>
+            {/* eslint-disable react/jsx-key */}
             <div className='flex flex-row mb-2'>
                 <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
                 <div className='ml-4 items-center'>

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import {useRouter} from 'next/router'
-import { useUserAuth } from '../../context/UserAuthContext';
-import { db } from '../../firebase/firebase';
+import { useUserAuth } from '../context/UserAuthContext';
+import { db } from '../firebase/firebase';
 import {ref, get} from 'firebase/database';
-import Table from '../../components/Table'
+import Table from '../components/Table'
 
 export const getStaticProps = async () => {
   //I considered putting this as an api route to utilise a fetch as requested in the spec
@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
   }
 }
 
-function index({products}) {
+function Dashboard({products}) {
   const router = useRouter()
   let {user, logOut} = useUserAuth()
   const [userName, setUserName] = useState("")
@@ -74,4 +74,4 @@ function index({products}) {
   )
 }
 
-export default index
+export default Dashboard

@@ -37,11 +37,11 @@ export default function Home() {
       {/* I wouldn't normally style components like this but I decided to try out Tailwind */}
       {/* I would normally create a js file in this folder that uses create stylesheet hook and import  */}
       {/* Into the file and do className={styles.class} */}
-      <h1 className='text-center text-3xl font-bold'>Welcome to the "Shop"</h1>
+      <h1 className='text-center text-3xl font-bold'>Welcome to the &#34;Shop&#34;</h1>
       <div className='max-w-[700px] mx-auto my-16 p-4'>
         <div>
           <h2 className='text-2xl font-bold py-2'>Sign In to your account</h2>
-          <p className="py-2 no-underline">Don't have an account yet? <Link href="/SignUp"><a className='underline decoration-sky-500'>Sign Up</a></Link></p>
+          <p className="py-2 no-underline">Don&apos;t have an account yet? <Link href="/SignUp"><a className='underline decoration-sky-500'>Sign Up</a></Link></p>
         </div>
         {error && <div className='w-full border-2 border-red-500 bg-red-200 p-4'>{error}</div>}
         <form onSubmit={handleSubmit}>

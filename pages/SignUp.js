@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { useUserAuth } from '../../context/UserAuthContext'
+import { useUserAuth } from '../context/UserAuthContext'
 import {useRouter} from 'next/router'
 
-function index() {
+function SignUp() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
@@ -46,4 +46,4 @@ function index() {
   )
 }
 
-export default index
+export default SignUp
